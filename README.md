@@ -1,10 +1,8 @@
-<h1 align="center">Mempry Matching Game</h1>
+<h1 align="center">Memory Matching Game</h1>
 
 [DEMO VIDEO](https://drive.google.com/file/d/1slfBUbUokhwk6EGT5x9ev-XgljCOci8C/view?usp=sharing)
 
 # Project Report
-
-#  Memory Matching Challenge
 
 **Submitted By:**  
 22k-4215 Zain Rizwan  
@@ -13,96 +11,82 @@
 **Instructor:** Miss Alishba  
 **Submission Date:** May 11, 2025  
 
----
+## 1. Executive Summary
 
-Demo video: https://drive.google.com/file/d/1slfBUbUokhwk6EGT5x9ev-XgljCOci8C/view?usp=sharing
+### Project Overview
 
-## 📄 1. Executive Summary
+This project involved creating a card-matching memory game that has an unique feature: players are required to match three cards of the same value, rather than the usual two.  There are two modes available in the game: single-player (against AI) and two-player.  The AI was created to emulate memory and strategic decision-making through a tailored heuristic method.  Using the Pygame library, the project was created in Python, with an emphasis on interactive gameplay, intelligent AI behavior, and seamless game mechanics.
 
-### 🎯 Project Overview
+## 2. Introduction
 
-The **Memory Matching Challenge** is a card-based puzzle game that tests a player's memory and pattern recognition skills. The game includes two modes: **Player vs Player** and **Player vs AI**, where the AI intelligently remembers previously seen cards to play strategically and challenge the player.
+### Background
 
----
+Players of classic memory-based card games such as Concentration must recall the locations of cards in order to match pairs.  These games are commonly employed to assess and enhance short-term memory and pattern recognition.  This project builds upon the classic formula by necessitating players to match three cards of the same type, thereby increasing difficulty and strategic depth and complicating memory retention and AI logic.
 
-## 🧠 2. Introduction
-
-### 📚 Background
-
-Memory games are classic logic challenges. This digital adaptation modernizes the experience using Python and AI, making it engaging for both solo and competitive play.
-
-### 🎯 Objectives
+### Objectives
 
 - Create a card-flipping memory game using **Pygame**
 - Implement **PvP** and **PvAI** modes
-- Develop an AI agent with card memory and logic
+- Modify the standard card-matching game to require matching triplets.
+- Implement an AI player that remembers previously seen cards and selects optimal moves.
 - Add a responsive UI and game over interface
 - Maintain real-time smooth gameplay
 
----
 
-## 🕹️ 3. Game Description
+##  3. Game Description
 
-### 📜 Original Rules
+###  Original Rules
 
-Players flip two cards per turn and try to find matches. The player with the most matched pairs wins.
+In a traditional card-matching game, cards are placed face-down.  With the goal of uncovering a matching pair, players turn over two cards each turn.  Unmatched cards are turned back over, while matched cards are taken away.  The game proceeds with players taking turns until every pair is matched.
 
-### 🔧 Enhancements
+### Innovations and Modifications
 
-- **Graphical UI** with Pygame
-- **Two Modes:**
-  - **PvP** – Two players take turns
-  - **PvAI** – AI competes using memory
-- AI remembers revealed unmatched cards
-- Game over screen displays final scores
-- Real-time feedback with animations and sounds
+- Changed matching requirement from pairs to triplets.
+- Developed AI memory logic to track multiple card positions of the same type.
+- Enhanced user interface with turn indicators, animations, and score displays.
+- Added game-over and restart functionality.
+- Adjusted scoring and turn logic to support the new match-3 rule.
 
----
 
-## 🤖 4. AI Approach and Methodology
+## 4. AI Approach and Methodology
 
-### 🧠 AI Techniques
+### AI Techniques Used
+The AI employs decision-making based on memory.  It keeps a dictionary of observed card values and their locations.  It picks cards according to known placements that create a triple.  It continues the exploration if there are less than three known cards for a value.
 
-- **Rule-Based Memory AI**:
-  - Stores known card positions
-  - Searches for matches before choosing at random
 
-### 🧩 Heuristic Design
-
-- Maintains a dictionary of revealed card positions
+### Algorithm and Heuristic Design
+- Memory Storage: AI stores revealed card values and their board positions.
 - Prioritizes known matches
 - Randomly guesses when no matches are known, avoiding duplicates
 
-### ⚙️ Performance
+### Performance
 
 - Fast decision-making (< 50ms per turn)
 - Emulates human memory
 - Improves performance as more cards are revealed
 
----
 
-## 📏 5. Game Mechanics and Rules
 
-### 🎮 Game Rules
+## 5. Game Mechanics and Rules
 
-- **4x4 grid** of 8 pairs
-- Players flip 2 cards each turn
-- A match earns a point and another turn
-- Non-matches flip back after delay
+### Game Rules
 
-### 🔁 Turn Flow
+- Each turn, a player selects three cards to flip.
+- A match is successful only if all three cards are of the same value.
+- Matched cards are removed; unmatched ones are flipped back.
+- Player gets another turn upon a successful match.
 
-1. Player flips two cards  
-2. If matched → point + extra turn  
-3. Else → cards flip back, turn changes  
-4. AI executes turn in PvAI mode
+### Turn-based mwchanics
 
-### 🏆 Win Conditions
+- Turn alternates unless a player makes a successful match.
+- Each player has a score counter.
+- The game board updates dynamically after every selection.
 
-- Game ends when all pairs are matched
+### Win Conditions
+
+- The game ends when all possible triplets are matched.
 - Player with most matches wins
-
----
+-  A draw is declared in case of equal scores.
 
 ## 🛠️ 6. Implementation and Development
 
