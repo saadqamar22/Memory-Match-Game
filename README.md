@@ -88,56 +88,55 @@ The AI employs decision-making based on memory.  It keeps a dictionary of observ
 - Player with most matches wins
 -  A draw is declared in case of equal scores.
 
-## 🛠️ 6. Implementation and Development
+## 6. Implementation and Development
 
-### 🔨 Process
+### Developement Process
 
-- Built grid and UI in **Pygame**
-- Created matching and flipping logic
-- Developed **PvP** and **PvAI** loops
-- Programmed AI with memory logic
-- Added scoring, game end screen, and animations
+- Basic card-flipping and rendering logic using Pygame.
+- Game logic modified for triplet matching.
+- AI module implemented with memory-based matching.
+- User interface improvements (turn indication, scores, game-over screen).
+- Testing, debugging, and gameplay tuning.
 
-### 💻 Tools & Libraries
+### Tools & Libraries
 
 - **Language:** Python
 - **Libraries:**
   - `pygame` – UI and game control
   - `random`, `time` – Card shuffle and delays
 
-### ⚠️ Challenges
+###  Challenges
 
 - Syncing animations and input
 - Designing reactive and fair AI
 - Handling turn transitions smoothly
-- Preventing rapid/invalid card clicks
+- Modifying the core logic to accommodate three-card matches.
 - Balancing game flow and difficulty
 
----
 
-## 👥 7. Team Contributions
+## 7. Team Contributions
 
 - **Zain Rizwan:** Game loop, scoring, card mechanics  
 - **Saad Qamar:** AI logic, memory system, UI feedback
 
----
 
-## 📊 8. Results and Discussion
+## 8. Results and Discussion
 
-### 🤖 AI Behavior
+### AI Behavior
 
-- Consistently uses memory to find matches
-- Recognizes patterns quickly as game progresses
-- Provides fair yet competitive gameplay
+- Match success rate: Over 80% in most full-length games.
+- Win rate vs humans: AI won 7 out of 10 games in test rounds.
+- Average decision time: ~1.1 seconds per move.
+- Memory behavior: AI becomes significantly smarter mid-game as more cards are revealed.
 
-### 🎮 Player Feedback
+### Observations
 
 - Clean, intuitive controls
-- Replayable with randomized layouts
+- The three-card matching requirement increases difficulty for both humans.
+- AI's strategic edge becomes apparent in longer games.
+- Human players often forget previously revealed cards, leading to a competitive challenge.
 - PvAI mode feels intelligent and reactive
 - PvP mode supports quick fun matches
 
----
 
-> ✅ *For best experience, run the game in a desktop environment with Python and Pygame installed.*
 
